@@ -2,6 +2,8 @@ import React from 'react';
 // @ts-ignore
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { Home, ChatBot } from './components';
+import './App.css';
+
 class App extends React.Component<any, any> {
       public render() {
             return <Router>
