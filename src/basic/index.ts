@@ -1,6 +1,6 @@
-import goodbye, {hello, birthday, add} from "./hello";
+import goodbye, {hello, birthday, add} from './hello'
 
-let menu: number = 2
+let menu: number = 1
 let name, profile: string = ""
 switch (menu) {
     case 0:
