@@ -5,9 +5,9 @@ export default class Kitty extends Component{
     }
     public state = {
         date: new Date(),
-        text: 'I hope you enjoy learning React!',
+        text: 'Give me your React Code!',
         author: {
-            name: 'Hello Kitty',
+            name: 'Hello CoJo',
             avatarUrl: 'https://file.thisisgame.com/upload/tboard/user/2009/11/09/20091109182154_7781.jpg',
         },
     };

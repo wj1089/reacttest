@@ -7,7 +7,6 @@ interface CounterState {
     number: number
 }
 class Counter extends Component<CounterProps, CounterState>{
-    [x: string]: any
     public state = {number : 0}
     props: any
 

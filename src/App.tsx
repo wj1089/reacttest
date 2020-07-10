@@ -1,31 +1,45 @@
-import React from 'react';
-// @ts-ignore
+import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { Home, ChatBot } from './components';
-import {Counter,Hello, Clock, Kitty} from "./oop";
+import { ChatBot } from './components';
+import {Counter,Hello, Clock, Kitty} from "./components/oop";
+import {Provider} from 'react-redux';
+import {ConnectedRouter} from 'connected-react-router';
+import { Home } from "./pages";
 import './App.css';
 
-class App extends React.Component<any, any> {
-      public render() {
-            return <Router>
-                    <Link to="/">홈으로</Link> <br/>
-                    <Link to="/HomePage">홈페이지</Link> <br/>
-                    <Link to="/chat">챗봇</Link><br/>
-                    <Link to="/Counter">카운터</Link><br/>
-                    <Link to="/Hello">헬로우</Link><br/>
-                    <Link to="/Clock">시계</Link><br/>
-                    <Link to="/Kitty">키티</Link><br/>
+class App extends Component<any, any>{
+    public render(){
+        const wrapperStyle= {
+            width: "500px",
+            height: "500px",
+        }
+        const myStyle= {
+            display: "inline-block",
+            width: "300px",
+            height: "300px",
+            boder: "1px solid black",
+            background: "skyblue",
+            margin: "0 auto"
+        }
 
-
-                <Route exact path='/' component={Home}/>
+        return  <div style={wrapperStyle}>
+            <div style={myStyle}>
+            <Router>
+                <Link to="/">홈으로</Link> <br/>
+                <Link to="/chat">챗봇</Link><br/>
+                <Link to="/counter">카운터</Link><br/>
+                <Link to="/hello">헬로우</Link><br/>
+                <Link to="/clock">시계</Link><br/>
+                <Link to="/cat">코조</Link><br/>
                 <Route exact path='/chat' component={ChatBot}/>
-                <Route exact path='/Clock' component={Clock}/>
-                <Route exact path='/Kitty' component={Kitty}/>
-
-                <Route exact path='/Counter'><Counter startNumber={0}/></Route>
-                <Route exact path='/Hello'><Hello name ={"홍길동"}/></Route>
-
+                <Route exact path='/cat' component={Kitty}/>
+                <Route exact path='/clock' component={Clock}/>
+                <Route exact path='/counter'><Counter startNumber={0}/></Route>
+                <Route exact path='/hello'><Hello name={"홍길동"}/></Route>
             </Router>
-      }
+            <Home/>
+            </div>
+        </div>
+    }
 }
 export default App;
